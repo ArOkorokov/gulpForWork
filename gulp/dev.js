@@ -56,7 +56,11 @@ gulp.task('fonts:dev', function() {
         .src('./src/fonts/**/*')
         .pipe(gulp.dest('./dist/fonts/'))
 })
-
+gulp.task('icons:dev', function() {
+    return gulp
+        .src('./src/icons/**/*')
+        .pipe(gulp.dest('./dist/icons/'))
+})
 gulp.task('js:dev', function(){
     return gulp
         .src('./src/js/*.js')

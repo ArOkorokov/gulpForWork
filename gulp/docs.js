@@ -43,16 +43,22 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./build/css'))
 })
 
-gulp.task('copy', function() {
-    return gulp
-        .src('./src/img/**/*')
-        .pipe(gulp.dest('./build/img/'))
-})
 gulp.task('fonts', function() {
     return gulp
         .src('./src/fonts/**/*')
         .pipe(gulp.dest('./build/fonts/'))
 })
+gulp.task('copy', function() {
+    return gulp
+        .src('./src/img/**/*')
+        .pipe(gulp.dest('./build/img/'))
+})
+gulp.task('icons', function() {
+    return gulp
+        .src('./src/icons/**/*')
+        .pipe(gulp.dest('./build/icons/'))
+})
+
 
 gulp.task('js', function(){
     return gulp
@@ -77,14 +83,8 @@ gulp.task('watch', function() {
     gulp.watch('./src/html_modules/**/*.html', gulp.parallel('html'));
     gulp.watch('./src/img/**/*', gulp.parallel('copy'));
     gulp.watch('./src/fonts/**/*', gulp.parallel('fonts'));
+    gulp.watch('./src/icons/**/*', gulp.parallel('icons'));
     gulp.watch('./src/js/*.js', gulp.parallel('js'));
 })
 
 
-gulp.task( 'default',
-      gulp.series(
-      'clean', 
-      gulp.parallel('html','sass','copy','fonts','js'),
-      gulp.parallel('watch','webserver'),
-
-));
