@@ -85,6 +85,7 @@ gulp.task('watch', function() {
     gulp.watch('./src/fonts/**/*', gulp.parallel('fonts'));
     gulp.watch('./src/icons/**/*', gulp.parallel('icons'));
     gulp.watch('./src/js/*.js', gulp.parallel('js'));
+    gulp.watch('./src/*.html', gulp.parallel('html'));
 })
 
 

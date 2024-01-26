@@ -1,0 +1,308 @@
+@import './scss_modules/normalize.scss';
+@import './scss_modules/fonts.scss';
+@import './scss_modules/swiper-bundle.min.scss';
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    font-family: poppins;
+    color: #010220;
+    font-weight: 400;
+}
+.lock {
+    overflow: hidden;
+}
+.hero__container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    
+}
+.system__title {
+    position: absolute;
+    top: -200%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(1, 2, 32, 0.5)    ;
+    padding: 0 100px;
+    color: #cbd9ee;
+
+}
+.header__logo_wrapper {
+    display: grid;
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+    z-index: 3;
+}
+.hero__menu_list {
+    display: flex;
+    gap: 30px;
+}
+
+.header__logo_text {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.header__logo_text2 {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.hero__menu_link {
+    text-transform: capitalize;
+    padding: 5px 7px;
+    font-weight: 500;
+    position: relative;
+}
+.hero__menu_link::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    background-color: #cbd9ee ;
+    transition: all 0.3s ease 0s;
+}
+.hero__menu_link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.hero__img-wrapper {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    clip-path: polygon(0 0, 62% 0, 51% 100%, 0 100%);
+
+}
+.hero__img-wrapper1 {
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: -2;
+    height: 100vh;
+    overflow: hidden;
+    min-width: 100vh;
+    display: flex;
+
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: img 50s ease 0s forwards;
+    transform-origin: right center;
+    position: relative;
+}
+.hero__img2 {
+    transform-origin: right center; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: img 50s ease 0s forwards;
+    position: relative;
+}
+.hero__content {
+    margin: 100px;
+    padding: 50px 100px;
+    display: grid;
+    position: relative;
+    color: #cbd9ee;
+    background-color: rgba(1, 2, 32, 0.5);
+    max-width: 850px;
+}
+
+
+.hero__content_title {
+    font-size: 40px;
+    max-width: 600px;
+    margin: 0 0 50px 0;
+}
+.hero__content_subtitle {
+    font-size: 22px;
+    max-width: 500px;
+    margin-left: 100px;
+
+}
+
+@keyframes img{
+    100% {
+        transform: scale(1.35);
+    }
+}
+
+.burger {
+    display: none;
+}
+@media(max-width: 1280px) {
+    .hero__content_title {
+        font-size: 32px;
+    }
+    .hero__content_subtitle {
+        font-size: 18px;
+    }
+}
+@media(max-width: 992px) {
+
+    .hero__content_title {
+        max-width: 500px;
+    }
+    .hero__content_subtitle {
+        max-width: 400px;
+    }
+    .hero__nav {
+        position: absolute;
+        top: 0;
+        left: -200%;
+        width: 100%;
+        height: 100vh;
+        background-color: #d8cdcd;
+        z-index: 1;
+        transition: all 0.4s ease 0s;
+        
+    }
+    .menu__active {
+        left: 0;
+        transition: all 0.4s ease 0s;
+        background-color: #010220;
+    }
+    .hero__menu_list {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .burger {
+        display: block;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+        z-index: 3;
+    }
+    .burger::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #cbd9ee;
+        transition: all 0.3s ease 0s;
+        
+
+    }
+    .burger::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #cbd9ee;
+
+        transition: all 0.3s ease 0s;
+
+    }
+    .burger__decor {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #cbd9ee;
+        transform: translate(0, 50%);
+        transition: all 0.3s ease 0s;
+
+    }
+    .burger-open::after{
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            transform: rotate(45deg);
+            transition: all 0.3s ease 0s;
+
+    }
+    .burger-open::before{
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            transform: rotate(-45deg);
+            transition: all 0.3s ease 0s;
+
+    }
+    .burger-open .burger__decor {
+        width: 0;
+        transition: all 0.3s ease 0s;
+
+    }
+}
+@media(max-width: 768px) {
+    .hero__img-wrapper1 {
+        display: none;
+    }
+    .hero__img-wrapper {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .header {
+        padding: 0 50px;
+    }
+    .hero__content {
+        padding: 50px 50px;
+        margin: 50px;
+    }
+}
+@media(max-width: 576px) {
+    .hero__content_title {
+        font-size: 20px;
+    }
+    .hero__content_subtitle {
+        font-size:16px;
+    }
+}
+@media(max-width: 475px) {
+    .header {
+        padding: 0 30px;
+    }
+    .hero__content {
+        padding: 30px 30px;
+        margin: 20px;
+    }
+    .header__logo_text2 {
+        font-size: 14px;
+    }
+    .hero__content_subtitle {
+        margin-left: 20px;
+    }
+}
+.hero__content-arty__link {
+    border-bottom: 2px solid rgb(55, 187, 15);
+    display: inline-block;
+}
+.hero__content-p strong,
+.hero__content-p b {
+    font-weight: inherit;
+    color: rgb(55, 187, 15);
+    display: inline-block;
+}

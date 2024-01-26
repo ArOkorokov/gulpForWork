@@ -20,5 +20,9 @@
     "sass": "^1.70.0",
     "style-loader": "^3.3.4",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "swiper": "^11.0.5"
   }
 }
